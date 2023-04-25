@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.learn.chapter5.mapper.EmployeeMapper">
+    <resultMap id="employeeMap" type="employee">
+        <id column="id" property="id"/>
+        <result column="real_name" property="realName"/>
+<!--        <result column="sex" property="sex" typeHandler="org.apache.ibatis.type.EnumTypeHandler"/>-->
+        <result column="sex" property="sex" jdbcType="INTEGER" typeHandler="com.learn.chapter5.pojo.SexEnumTypeHandler"/>
+        <result column="birthday" property="birthday"/>
+        <result column="email" property="email"/>
+        <result column="position" property="position"/>
+        <result column="note" property="note"/>
+        <!-- employee和workCard一对一       -->
+        <association property="workCard" column="id"
+                     select="com.learn.chapter5.mapper.WorkCardMapper.getWorkCardByEmpId" />
+        <!-- employee和employeeTask一对多       -->
+<!--        <collection property="employeeTaskList" column="id" fetchType="eager"-->
+        <collection property="employeeTaskList" column="id"
+                     select="com.learn.chapter5.mapper.EmployeeTaskMapper.getEmployeeTaskByEmpId" />
+        <!-- 鉴别器       -->
+        <discriminator javaType="long" column="sex">
+            <case value="1" resultMap="maleHealthFormMapper"/>
+            <case value="0" resultMap="femaleHealthFormMapper"/>
+        </discriminator>
+    </resultMap>
+
+    <resultMap id="femaleHealthFormMapper" type="femaleEmployee" extends="employeeMap">
+        <association property="femaleHealthForm" column="id"
+                     select="com.learn.chapter5.mapper.FemaleHealthFormMapper.getFemaleHealthForm" />
+    </resultMap>
+
+    <resultMap id="maleHealthFormMapper" type="maleEmployee" extends="employeeMap">
+        <association property="maleHealthForm" column="id"
+                     select="com.learn.chapter5.mapper.MaleHealthFormMapper.getMaleHealthForm" />
+    </resultMap>
+    
+    <select id="getEmployee" parameterType="long" resultMap="employeeMap">
+        select id, real_name, sex, birthday, mobile, email, position, note from t_employee
+        where id = #{id}
+    </select>
+
+</mapper>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="jdbc.properties" />
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+<!--        <setting name="lazyLoadingEnabled" value="true"/>-->
+<!--        <setting name="aggressiveLazyLoading" value="false"/>-->
+<!--        <setting name="logImpl" value="LOG4J"/>-->
+    </settings>
+    <typeAliases>
+        <typeAlias alias="role" type="com.learn.chapter4.pojo.Role"/>
+        <typeAlias alias="task" type="com.learn.chapter5.pojo.Task"/>
+        <typeAlias alias="workCard" type="com.learn.chapter5.pojo.WorkCard"/>
+        <typeAlias alias="employeeTask" type="com.learn.chapter5.pojo.EmployeeTask"/>
+        <typeAlias alias="maleHealthForm" type="com.learn.chapter5.pojo.MaleHealthForm"/>
+        <typeAlias alias="femaleHealthForm" type="com.learn.chapter5.pojo.FemaleHealthForm"/>
+        <typeAlias alias="employee" type="com.learn.chapter5.pojo.Employee"/>
+        <typeAlias alias="femaleEmployee" type="com.learn.chapter5.pojo.FemaleEmployee"/>
+        <typeAlias alias="maleEmployee" type="com.learn.chapter5.pojo.MaleEmployee"/>
+    </typeAliases>
+    <typeHandlers>
+        <!--    可以在typeHandler标签上写javaType和jdbcType    -->
+        <!--        <typeHandler handler="com.my.typehandler.SexTypeHandler" javaType="com.my.enums.Sex" jdbcType="CHAR"></typeHandler>-->
+        <typeHandler handler="com.learn.chapter5.pojo.SexEnumTypeHandler" javaType="com.learn.chapter5.pojo.SexEnum" jdbcType="INTEGER"/>
+    </typeHandlers>
+    <!--  插件  -->
+<!--    <plugins>-->
+<!--        <plugin interceptor="com.learn.chapter9.interceptor.MyPlugin">-->
+<!--            <property name="dbType" value="mysql"/>-->
+<!--        </plugin>-->
+<!--    </plugins>-->
+    <!--  数据库环境  -->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC" />
+            <dataSource type="POOLED">
+                <property name="driver" value="${database.driver}"/>
+                <property name="url" value="${database.url}"/>
+                <property name="username" value="${database.username}"/>
+                <property name="password" value="${database.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="mapper/roleMapper.xml"/>
+        <mapper resource="mapper/TaskMapper.xml"/>
+        <mapper resource="mapper/WorkCardMapper.xml"/>
+        <mapper resource="mapper/EmployeeTaskMapper.xml"/>
+        <mapper resource="mapper/MaleHealthFormMapper.xml"/>
+        <mapper resource="mapper/FemaleHealthFormMapper.xml"/>
+        <mapper resource="mapper/EmployeeMapper.xml"/>
+    </mappers>
+</configuration>

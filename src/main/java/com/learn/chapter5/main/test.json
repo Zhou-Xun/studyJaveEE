@@ -1,0 +1,1038 @@
+{
+  "serviceType": "",
+  "__resAppEname__": "imc-sa",
+  "consignId": "",
+  "$$remote$$": "false",
+  "methodName": "consignmentQuery",
+  "soaInvokeProtocol": "local",
+  "urlAdress": "http://localhost:8186/imc-sd/service",
+  "serviceName": "UVSL0007",
+  "soTimeout": 600000,
+  "__blocks__": {
+    "inqu_status": {
+      "meta": {
+        "columns": [
+          {
+            "pos": 0,
+            "name": "segNo",
+            "descName": " "
+          },
+          {
+            "pos": 1,
+            "name": "consignId",
+            "descName": " "
+          },
+          {
+            "pos": 2,
+            "name": "contractNum",
+            "descName": " "
+          },
+          {
+            "pos": 3,
+            "name": "consigner",
+            "descName": " "
+          },
+          {
+            "pos": 4,
+            "name": "settleUserNum",
+            "descName": " "
+          },
+          {
+            "pos": 5,
+            "name": "settleUserName",
+            "descName": " "
+          },
+          {
+            "pos": 6,
+            "name": "consignTimeStart",
+            "descName": " "
+          },
+          {
+            "pos": 7,
+            "name": "consignTimeEnd",
+            "descName": " "
+          },
+          {
+            "pos": 8,
+            "name": "consignBillType",
+            "descName": " "
+          },
+          {
+            "pos": 9,
+            "name": "consignBillStatus",
+            "descName": " "
+          },
+          {
+            "pos": 10,
+            "name": "inoutFactoryFlag",
+            "descName": " "
+          },
+          {
+            "pos": 11,
+            "name": "transType",
+            "descName": " "
+          },
+          {
+            "pos": 12,
+            "name": "eventStatus",
+            "descName": " "
+          },
+          {
+            "pos": 13,
+            "name": "factoryOrderNum",
+            "descName": " "
+          }
+        ],
+        "attr": {},
+        "desc": ""
+      },
+      "attr": {},
+      "rows": [
+        [
+          "MG000000",
+          "CO23030004",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "20",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ]
+    },
+    "result": {
+      "meta": {
+        "columns": [
+          {
+            "pos": 0,
+            "name": "uuid",
+            "descName": "ID"
+          },
+          {
+            "pos": 1,
+            "name": "recCreator",
+            "descName": "记录创建人"
+          },
+          {
+            "pos": 2,
+            "name": "recCreatorName",
+            "descName": "记录创建人姓名"
+          },
+          {
+            "pos": 3,
+            "name": "recCreateTime",
+            "descName": "记录创建时间"
+          },
+          {
+            "pos": 4,
+            "name": "recRevisor",
+            "descName": "记录修改人"
+          },
+          {
+            "pos": 5,
+            "name": "recRevisorName",
+            "descName": "记录修改人姓名"
+          },
+          {
+            "pos": 6,
+            "name": "recReviseTime",
+            "descName": "记录修改时间"
+          },
+          {
+            "pos": 7,
+            "name": "archiveFlag",
+            "descName": "归档标记"
+          },
+          {
+            "pos": 8,
+            "name": "delFlag",
+            "descName": "记录删除标记"
+          },
+          {
+            "pos": 9,
+            "name": "tenantUser",
+            "descName": "租户"
+          },
+          {
+            "pos": 10,
+            "name": "unitCode",
+            "descName": "业务单元代码"
+          },
+          {
+            "pos": 11,
+            "name": "segNo",
+            "descName": "系统账套",
+            "primaryKey": true
+          },
+          {
+            "pos": 12,
+            "name": "consignId",
+            "descName": "委托单号",
+            "primaryKey": true
+          },
+          {
+            "pos": 13,
+            "name": "consignBillStatus",
+            "descName": "委托单状态"
+          },
+          {
+            "pos": 14,
+            "name": "consignBillType",
+            "descName": "委托单类型"
+          },
+          {
+            "pos": 15,
+            "name": "consignTime",
+            "descName": "委托时间"
+          },
+          {
+            "pos": 16,
+            "name": "consigner",
+            "descName": "委托人"
+          },
+          {
+            "pos": 17,
+            "name": "mproviderId",
+            "descName": "加工单位代码"
+          },
+          {
+            "pos": 18,
+            "name": "mproviderName",
+            "descName": "加工单位名称"
+          },
+          {
+            "pos": 19,
+            "name": "voucherNum",
+            "descName": "依据凭单"
+          },
+          {
+            "pos": 20,
+            "name": "planGrossWeight",
+            "scaleLength": 8,
+            "descName": "计划毛重",
+            "type": "N"
+          },
+          {
+            "pos": 21,
+            "name": "planNetWeight",
+            "scaleLength": 8,
+            "descName": "计划净重",
+            "type": "N"
+          },
+          {
+            "pos": 22,
+            "name": "settleUserNum",
+            "descName": "(结算)需方用户代码"
+          },
+          {
+            "pos": 23,
+            "name": "settleUserName",
+            "descName": "(结算)需方用户名称"
+          },
+          {
+            "pos": 24,
+            "name": "inoutFactoryFlag",
+            "descName": "厂内外区分标志"
+          },
+          {
+            "pos": 25,
+            "name": "consignIdFactory",
+            "descName": "钢厂委托单号"
+          },
+          {
+            "pos": 26,
+            "name": "remark",
+            "descName": "备注"
+          },
+          {
+            "pos": 27,
+            "name": "gatherCenterNo",
+            "descName": "集批中心代码"
+          },
+          {
+            "pos": 28,
+            "name": "lgsSegNo",
+            "descName": "物流组织代码"
+          },
+          {
+            "pos": 29,
+            "name": "sourceSystem",
+            "descName": "来源系统"
+          },
+          {
+            "pos": 30,
+            "name": "eventStatus",
+            "descName": "电文发送状态"
+          }
+        ]
+      },
+      "attr": {
+        "offset": 0,
+        "count": 0,
+        "limit": 10
+      },
+      "rows": [
+        [
+          "40288a818726813c0187269af3a40006",
+          "KF2031",
+          "王维",
+          "20230328130502",
+          "KF2031",
+          "王维",
+          "20230328130502",
+          "",
+          "0",
+          "",
+          "MG000000",
+          "MG000000",
+          "CO23030004",
+          "20",
+          "10",
+          "20230328",
+          "王维",
+          "",
+          "",
+          "",
+          "0.00000000",
+          "0.01000000",
+          "000107",
+          "广州宝钢南方贸易有限公司",
+          "10",
+          "B2303283070",
+          "",
+          "",
+          "BGTM",
+          "",
+          ""
+        ],
+        [
+          "94cbeb4686c97d510186c985167d0068",
+          "SYSTEM",
+          "SYSTEM",
+          "20230310111628",
+          "SYSTEM",
+          "SYSTEM",
+          "20230310111628",
+          "",
+          "0",
+          "",
+          " ",
+          "MG000000",
+          "BGMPC2303100035",
+          "20",
+          "10",
+          "20230310",
+          "sys",
+          " ",
+          " ",
+          "TEST2207070019",
+          "100.00000000",
+          "100.00000000",
+          "000425",
+          "上海宝钢钢材贸易有限公司",
+          "20",
+          "E2303100044",
+          "",
+          "",
+          "BGMP",
+          "",
+          ""
+        ],
+        [
+          "94cbb5ce86c4e05a0186c4e86bdc0052",
+          "SYSTEM",
+          "SYSTEM",
+          "20230309134652",
+          "SYSTEM",
+          "SYSTEM",
+          "20230309134652",
+          "",
+          "0",
+          "",
+          " ",
+          "MG000000",
+          "BGMPC2303090030",
+          "20",
+          "10",
+          "20230309",
+          "sys",
+          " ",
+          " ",
+          "TEST2207070003",
+          "27.00000000",
+          "27.00000000",
+          "000425",
+          "上海宝钢钢材贸易有限公司",
+          "20",
+          "E2303090039",
+          "",
+          "",
+          "BGMP",
+          "",
+          "10"
+        ],
+        [
+          "94cbc03d86c4e2780186c4e57ebd003a",
+          "SYSTEM",
+          "SYSTEM",
+          "20230309134340",
+          "SYSTEM",
+          "SYSTEM",
+          "20230309134340",
+          "",
+          "0",
+          "",
+          " ",
+          "MG000000",
+          "BGMPC2303090029",
+          "20",
+          "10",
+          "20230309",
+          "sys",
+          " ",
+          " ",
+          "TEST2207070002",
+          "100.00000000",
+          "100.00000000",
+          "000425",
+          "上海宝钢钢材贸易有限公司",
+          "20",
+          "E2303090038",
+          "",
+          "",
+          "BGMP",
+          "",
+          "10"
+        ],
+        [
+          "94cb9fe086c4dd9b0186c4e145140084",
+          "SYSTEM",
+          "SYSTEM",
+          "20230309133903",
+          "SYSTEM",
+          "SYSTEM",
+          "20230309133903",
+          "",
+          "0",
+          "",
+          " ",
+          "MG000000",
+          "BGMPC2303090028",
+          "20",
+          "10",
+          "20230309",
+          "sys",
+          " ",
+          " ",
+          "TEST2207070001",
+          "60.00000000",
+          "60.00000000",
+          "000425",
+          "上海宝钢钢材贸易有限公司",
+          "20",
+          "E2303090037",
+          "",
+          "",
+          "BGMP",
+          "",
+          "10"
+        ],
+        [
+          "8adb831986c0e5f30186c0f51fb4001b",
+          "SYSTEM",
+          "SYSTEM",
+          "20230308192215",
+          "SYSTEM",
+          "SYSTEM",
+          "20230308192215",
+          "",
+          "0",
+          "",
+          " ",
+          "MG000000",
+          "BGMPC2303080027",
+          "20",
+          "10",
+          "20230308",
+          "sys",
+          " ",
+          " ",
+          "TEST2217070037",
+          "60.00000000",
+          "60.00000000",
+          "000425",
+          "上海宝钢钢材贸易有限公司",
+          "10",
+          "E2303080036",
+          "",
+          "",
+          "BGMP",
+          "",
+          ""
+        ],
+        [
+          "8adb831986c0e5f30186c0f2d21b0016",
+          "SYSTEM",
+          "SYSTEM",
+          "20230308191945",
+          "SYSTEM",
+          "SYSTEM",
+          "20230308191945",
+          "",
+          "0",
+          "",
+          " ",
+          "MG000000",
+          "BGMPC2303080026",
+          "20",
+          "10",
+          "20230308",
+          "sys",
+          " ",
+          " ",
+          "TEST2217070036",
+          "320.00000000",
+          "320.00000000",
+          "000425",
+          "上海宝钢钢材贸易有限公司",
+          "10",
+          "E2303080035",
+          "",
+          "",
+          "BGMP",
+          "",
+          ""
+        ],
+        [
+          "8a992aea862ab0f201862ec68b120006",
+          "KF2031",
+          "王维",
+          "20230208100649",
+          "KF2031",
+          "王维",
+          "20230209095100",
+          "",
+          "0",
+          "",
+          "MG000000",
+          "MG000000",
+          "CO23020001",
+          "20",
+          "10",
+          "20230209",
+          "王维",
+          "BGSA00H79",
+          "2050成品库集约型热处理库区",
+          " ",
+          "1.36000000",
+          "1.36000000",
+          " ",
+          " ",
+          "10",
+          "J2302090008",
+          " ",
+          " ",
+          "BGTM",
+          "",
+          "10"
+        ]
+      ]
+    },
+    "result1": {
+      "meta": {
+        "columns": [
+          {
+            "pos": 0,
+            "name": "orderWt",
+            "descName": " ",
+            "type": "N"
+          },
+          {
+            "pos": 1,
+            "name": "allowWeight",
+            "descName": " ",
+            "type": "N"
+          },
+          {
+            "pos": 2,
+            "name": "totalNetWeight",
+            "descName": " ",
+            "type": "N"
+          },
+          {
+            "pos": 3,
+            "name": "interiorNetWeight",
+            "descName": " ",
+            "type": "N"
+          },
+          {
+            "pos": 4,
+            "name": "exteriorNetWeight",
+            "descName": " ",
+            "type": "N"
+          },
+          {
+            "pos": 5,
+            "name": "underConsignment",
+            "descName": " ",
+            "type": "N"
+          },
+          {
+            "pos": 6,
+            "name": "uuid",
+            "descName": "ID"
+          },
+          {
+            "pos": 7,
+            "name": "recCreator",
+            "descName": "记录创建人"
+          },
+          {
+            "pos": 8,
+            "name": "recCreatorName",
+            "descName": "记录创建人姓名"
+          },
+          {
+            "pos": 9,
+            "name": "recCreateTime",
+            "descName": "记录创建时间"
+          },
+          {
+            "pos": 10,
+            "name": "recRevisor",
+            "descName": "记录修改人"
+          },
+          {
+            "pos": 11,
+            "name": "recRevisorName",
+            "descName": "记录修改人姓名"
+          },
+          {
+            "pos": 12,
+            "name": "recReviseTime",
+            "descName": "记录修改时间"
+          },
+          {
+            "pos": 13,
+            "name": "archiveFlag",
+            "descName": "归档标记"
+          },
+          {
+            "pos": 14,
+            "name": "delFlag",
+            "descName": "记录删除标记"
+          },
+          {
+            "pos": 15,
+            "name": "tenantUser",
+            "descName": "租户"
+          },
+          {
+            "pos": 16,
+            "name": "unitCode",
+            "descName": "业务单元代码"
+          },
+          {
+            "pos": 17,
+            "name": "segNo",
+            "descName": "系统账套",
+            "primaryKey": true
+          },
+          {
+            "pos": 18,
+            "name": "consignId",
+            "descName": "委托单号",
+            "primaryKey": true
+          },
+          {
+            "pos": 19,
+            "name": "consignSubid",
+            "descName": "委托单子项号",
+            "primaryKey": true
+          },
+          {
+            "pos": 20,
+            "name": "consignSubstatus",
+            "descName": "委托子项状态"
+          },
+          {
+            "pos": 21,
+            "name": "inoutFactoryFlag",
+            "descName": "厂内外区分标志"
+          },
+          {
+            "pos": 22,
+            "name": "entrustFlag",
+            "descName": "委托控货标志"
+          },
+          {
+            "pos": 23,
+            "name": "factoryCompanyCode",
+            "descName": "钢厂订单公司别"
+          },
+          {
+            "pos": 24,
+            "name": "factoryOrderNum",
+            "descName": "钢厂订单号"
+          },
+          {
+            "pos": 25,
+            "name": "productId",
+            "descName": "资源号"
+          },
+          {
+            "pos": 26,
+            "name": "measureId",
+            "descName": "计量单位"
+          },
+          {
+            "pos": 27,
+            "name": "specDesc",
+            "descName": "规格"
+          },
+          {
+            "pos": 28,
+            "name": "shopsign",
+            "descName": "牌号"
+          },
+          {
+            "pos": 29,
+            "name": "prodCode",
+            "descName": "品种代码"
+          },
+          {
+            "pos": 30,
+            "name": "prodCname",
+            "descName": "品名（中文）"
+          },
+          {
+            "pos": 31,
+            "name": "techStandard",
+            "descName": "技术标准"
+          },
+          {
+            "pos": 32,
+            "name": "qualityGrade",
+            "descName": "质量等级"
+          },
+          {
+            "pos": 33,
+            "name": "producingAreaCode",
+            "descName": "产地代码"
+          },
+          {
+            "pos": 34,
+            "name": "packWt",
+            "scaleLength": 8,
+            "descName": "件重",
+            "type": "N"
+          },
+          {
+            "pos": 35,
+            "name": "pieceNum",
+            "descName": "件数(张数,根数,支数)",
+            "type": "N"
+          },
+          {
+            "pos": 36,
+            "name": "planGrossWeight",
+            "scaleLength": 8,
+            "descName": "计划毛重",
+            "type": "N"
+          },
+          {
+            "pos": 37,
+            "name": "planNetWeight",
+            "scaleLength": 8,
+            "descName": "计划净重",
+            "type": "N"
+          },
+          {
+            "pos": 38,
+            "name": "tproviderId",
+            "descName": "承运商代码"
+          },
+          {
+            "pos": 39,
+            "name": "tproviderName",
+            "descName": "承运商名称"
+          },
+          {
+            "pos": 40,
+            "name": "transType",
+            "descName": "运输方式"
+          },
+          {
+            "pos": 41,
+            "name": "deliveryType",
+            "descName": "交货方式"
+          },
+          {
+            "pos": 42,
+            "name": "destSpotId",
+            "descName": "终到站(/仓库)代码"
+          },
+          {
+            "pos": 43,
+            "name": "destSpotName",
+            "descName": "终到站(/仓库)名称"
+          },
+          {
+            "pos": 44,
+            "name": "destSpotAddr",
+            "descName": "终到站(/仓库)地址"
+          },
+          {
+            "pos": 45,
+            "name": "consigneeNum",
+            "descName": "收货用户代码"
+          },
+          {
+            "pos": 46,
+            "name": "consigneeName",
+            "descName": "收货用户名称"
+          },
+          {
+            "pos": 47,
+            "name": "cancelBatchId",
+            "descName": "撤销批次号"
+          },
+          {
+            "pos": 48,
+            "name": "gatherCenterNo",
+            "descName": "集批中心代码"
+          },
+          {
+            "pos": 49,
+            "name": "gatherStatus",
+            "descName": "集批状态"
+          },
+          {
+            "pos": 50,
+            "name": "gatherPlanNo",
+            "descName": "集批计划号"
+          },
+          {
+            "pos": 51,
+            "name": "gatherRequNo",
+            "descName": "集批需求号"
+          },
+          {
+            "pos": 52,
+            "name": "voucherNum",
+            "descName": "依据凭单"
+          },
+          {
+            "pos": 53,
+            "name": "orderNum",
+            "descName": "销售订单子项号"
+          },
+          {
+            "pos": 54,
+            "name": "contractNum",
+            "descName": "销售订单号"
+          },
+          {
+            "pos": 55,
+            "name": "companyCode",
+            "descName": "卖方公司别"
+          },
+          {
+            "pos": 56,
+            "name": "rainCloth",
+            "descName": "是否盖雨布"
+          },
+          {
+            "pos": 57,
+            "name": "shipLotNo",
+            "descName": "船批号"
+          },
+          {
+            "pos": 58,
+            "name": "shipNameCn",
+            "descName": "船名中文"
+          },
+          {
+            "pos": 59,
+            "name": "flowNo",
+            "descName": "流向变更号"
+          },
+          {
+            "pos": 60,
+            "name": "actGrossWeight",
+            "scaleLength": 8,
+            "descName": "实绩毛重",
+            "type": "N"
+          },
+          {
+            "pos": 61,
+            "name": "actNetWeight",
+            "scaleLength": 8,
+            "descName": "实绩净重",
+            "type": "N"
+          },
+          {
+            "pos": 62,
+            "name": "finGrossWeight",
+            "scaleLength": 6,
+            "descName": "发货完成毛重",
+            "type": "N"
+          },
+          {
+            "pos": 63,
+            "name": "finNetWeight",
+            "scaleLength": 6,
+            "descName": "发货完成净重",
+            "type": "N"
+          },
+          {
+            "pos": 64,
+            "name": "freightInvoiceTitleId",
+            "descName": "运费发票抬头单位代码"
+          },
+          {
+            "pos": 65,
+            "name": "freightInvoiceTitleName",
+            "descName": "运费发票抬头单位名称"
+          },
+          {
+            "pos": 66,
+            "name": "freightInvoiceTitleTaxNum",
+            "descName": "运费发票抬头单位税号"
+          },
+          {
+            "pos": 67,
+            "name": "inciInvoiceTitleId",
+            "descName": "杂费发票抬头单位代码"
+          },
+          {
+            "pos": 68,
+            "name": "inciInvoiceTitleName",
+            "descName": "杂费发票抬头单位名称"
+          },
+          {
+            "pos": 69,
+            "name": "inciInvoiceTitleTaxNum",
+            "descName": "杂费发票抬头单位税号"
+          },
+          {
+            "pos": 70,
+            "name": "detailFlag",
+            "descName": "委托粒度"
+          },
+          {
+            "pos": 71,
+            "name": "deliveryPlaceCode",
+            "descName": "交货地点代码"
+          },
+          {
+            "pos": 72,
+            "name": "deliveryPlaceName",
+            "descName": "交货地点名称"
+          },
+          {
+            "pos": 73,
+            "name": "transTypeChange",
+            "descName": "流向变更运输方式"
+          }
+        ]
+      },
+      "rows": [
+        [
+          "57.00000000",
+          "0",
+          "1.01000000",
+          "0",
+          "0",
+          "55.99000000",
+          "40288a818726813c0187269af4d20007",
+          "KF2031",
+          "王维",
+          "20230328130502",
+          "KF2031",
+          "王维",
+          "20230328130502",
+          "",
+          "0",
+          "",
+          "MG000000",
+          "MG000000",
+          "CO23030004",
+          "CO23030004001",
+          "20",
+          "10",
+          "A",
+          "MG",
+          "I3B0000025",
+          "",
+          " ",
+          " ",
+          "S355MC",
+          "I0",
+          "热轧钢带",
+          " ",
+          " ",
+          " ",
+          "0.00000000",
+          "0",
+          "0.00000000",
+          "0.01000000",
+          " ",
+          " ",
+          " ",
+          "20",
+          " ",
+          " ",
+          " ",
+          "150691",
+          "上海平青供应链管理有限公司",
+          " ",
+          " ",
+          "",
+          "",
+          "",
+          "",
+          "I3B0000025",
+          "I3B0129",
+          "MG",
+          "",
+          "",
+          "",
+          " ",
+          "0.00000000",
+          "0.00000000",
+          "0.000000",
+          "0.000000",
+          " ",
+          " ",
+          " ",
+          " ",
+          " ",
+          " ",
+          " ",
+          "",
+          "",
+          " "
+        ]
+      ]
+    }
+  },
+  "segNo": "",
+  "__resProjectEname__": "sim",
+  "__sys__": {
+    "msg": "查询成功！",
+    "traceId": "c0a80aa011168051403627800000092",
+    "detailMsg": "",
+    "msgKey": "ep.2000",
+    "status": 0
+  },
+  "__version__": "2.0",
+  "serviceId": "S_UV_SL_0060",
+  "UUID": "70a1b6aa-6700-4c4a-ae01-aaca15c05401"
+}

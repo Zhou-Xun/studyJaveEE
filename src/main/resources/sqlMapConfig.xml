@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!-- 全局映射器启用缓存 -->
+        <setting name="cacheEnabled" value="true"/>
+        <!-- 允许JDBC支持生成的键，需要适当的驱动 -->
+        <setting name="useGeneratedKeys" value="true"/>
+        <!-- REUSE执行器重用预处理语句 -->
+        <setting name="defaultExecutorType" value="REUSE"/>
+        <!-- 全局启用延迟加载, 关联对象延迟加载 -->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <!-- 设置超时时间, 决定驱动等待一个数据库响应的时间 -->
+        <setting name="defaultStatementTimeout" value="25000"/>
+    </settings>
+    <!-- 别名配置 -->
+    <typeAliases>
+        <typeAlias type="com.learn.chapter12.pojo.Role" alias="role" />
+    </typeAliases>
+    <!-- 指定映射器路径 -->
+    <mappers>
+        <mapper resource="mapper/chapter12/roleMapper.xml" />
+    </mappers>
+</configuration>

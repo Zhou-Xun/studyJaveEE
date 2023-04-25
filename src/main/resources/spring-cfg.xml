@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <!-- 开启注解扫描 -->
+<!--    <context:component-scan base-package="com.learn.chapter11"></context:component-scan>-->
+    <!-- 开启Aspect开启代理对象 -->
+    <aop:aspectj-autoproxy />
+    <bean id="source" class="com.learn.chapter10.pojo.Source">
+        <property name="fruit" value="橙汁"/>
+        <property name="sugar" value="少糖"/>
+        <property name="size" value="3"/>
+    </bean>
+    <bean id="juiceMaker" class="com.learn.chapter10.pojo.JuiceMaker">
+        <property name="beverageShop" value="奶茶店a" />
+        <property name="source" ref="source" />
+    </bean>
+    <bean id="role" class="com.learn.chapter10.pojo.Role">
+        <constructor-arg index="0" value="总经理" />
+        <constructor-arg index="1" value="公司管理者" />
+    </bean>
+    <bean id="roleSetter" class="com.learn.chapter10.pojo.Role">
+        <property name="roleName" value="总经理Setter" />
+        <property name="note" value="公司管理者Setter" />
+    </bean>
+    <bean id="complexAssembly" class="com.learn.chapter10.pojo.ComplexAssembly">
+        <property name="id" value="1" />
+        <property name="list">
+            <list>
+                <value>value-list-1</value>
+                <value>value-list-2</value>
+                <value>value-list-3</value>
+            </list>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="key1" value="value-key-1" />
+                <entry key="key2" value="value-key-2" />
+                <entry key="key3" value="value-key-3" />
+            </map>
+        </property>
+        <property name="props">
+            <props>
+                <prop key="prop1">value-prop=1</prop>
+                <prop key="prop2">value-prop=2</prop>
+                <prop key="prop3">value-prop=3</prop>
+            </props>
+        </property>
+        <property name="set">
+            <set>
+                <value>value-set-1</value>
+                <value>value-set-2</value>
+                <value>value-set-3</value>
+            </set>
+        </property>
+        <property name="array">
+            <array>
+                <value>value-array-1</value>
+                <value>value-array-2</value>
+                <value>value-array-3</value>
+            </array>
+        </property>
+    </bean>
+    <bean id="role1" class="com.learn.chapter10.pojo.Role">
+        <property name="id" value="1" />
+        <property name="roleName" value="role_name_1" />
+        <property name="note" value="role_note_1" />
+    </bean>
+    <bean id="role2" class="com.learn.chapter10.pojo.Role">
+        <property name="id" value="2" />
+        <property name="roleName" value="role_name_2" />
+        <property name="note" value="role_note_2" />
+    </bean>
+    <bean id="user1" class="com.learn.chapter10.pojo.User">
+        <property name="id" value="1" />
+        <property name="userName" value="user_name_1" />
+        <property name="note" value="role_note_1" />
+    </bean>
+    <bean id="user2" class="com.learn.chapter10.pojo.User">
+        <property name="id" value="2" />
+        <property name="userName" value="user_name_2" />
+        <property name="note" value="role_note_2" />
+    </bean>
+    <bean id="userRoleAssembly" class="com.learn.chapter10.pojo.UserRoleAssembly">
+        <property name="id" value="1"/>
+        <property name="list">
+            <list>
+                <ref bean="role1" />
+                <ref bean="role2" />
+            </list>
+        </property>
+        <property name="map">
+            <map>
+                <entry key-ref="role1" value-ref="user1" />
+                <entry key-ref="role2" value-ref="user2" />
+            </map>
+        </property>
+        <property name="set">
+            <set>
+                <ref bean="role1" />
+                <ref bean="role2" />
+            </set>
+        </property>
+    </bean>
+    <bean id="role_c_1" class="com.learn.chapter10.pojo.Role"
+          c:_0="1" c:_1="role_name_1" c:_2="role_note_1" />
+    <bean id="role_p_1" class="com.learn.chapter10.pojo.Role"
+          p:id="2" p:roleName="role_name_2" p:note="role_note_2" />
+    <bean id="user_p_1" class="com.learn.chapter10.pojo.User"
+          p:id="1" p:userName="user_name_1" p:note="user_note_1" />
+    <bean id="user_p_2" class="com.learn.chapter10.pojo.User"
+          p:id="2" p:userName="user_name_2" p:note="user_note_2" />
+    <util:list id="list">
+        <ref bean="role_c_1" />
+        <ref bean="role_p_1" />
+    </util:list>
+    <util:map id="map">
+        <entry key-ref="role_c_1" value-ref="user_p_1" />
+        <entry key-ref="role_p_1" value-ref="user_p_2" />
+    </util:map>
+    <util:set id="set">
+        <ref bean="role_c_1" />
+        <ref bean="role_p_1" />
+    </util:set>
+    <bean id="userRoleAssembly_p_1" class="com.learn.chapter10.pojo.UserRoleAssembly"
+          p:id="1" p:list-ref="list" p:map-ref="map" p:set-ref="set" />
+    <bean id="myProperties" class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+        <!-- 字符串数组，可配置多个属性文件 -->
+        <property name="locations">
+            <array value-type="org.springframework.core.io.Resource">
+                <value>classpath:test-database-config.properties</value>
+                <value>classpath:log4j.properties</value>
+            </array>
+        </property>
+        <property name="ignoreResourceNotFound" value="true" />
+    </bean>
+    <bean id="xmlAspect" class="com.learn.chapter11.aopService.XmlAspect" />
+    <bean id="roleService11" class="com.learn.chapter11.aopService.RoleServiceImpl" />
+    <aop:config>
+        <!-- 引用xmlAspect作为切面 -->
+        <aop:aspect ref="xmlAspect">
+            <!-- 定义切点 -->
+            <aop:pointcut id="printRole" expression="execution(* 
+            com.learn.chapter11.aopService.RoleServiceImpl.printRoleInfo(..))"/>
+            <!-- 定义通知, 引入切点 -->
+            <aop:before method="before" pointcut="execution(*
+            com.learn.chapter11.aopService.RoleServiceImpl.printRoleInfo(..))
+            and args(role)"/>
+            <aop:after method="after" pointcut-ref="printRole"/>
+            <aop:after-throwing method="afterThrowing" pointcut-ref="printRole"/>
+            <aop:after-returning method="afterReturning" pointcut-ref="printRole"/>
+            <aop:around method="around" pointcut-ref="printRole"/>
+        </aop:aspect>
+    </aop:config>
+    <!-- 数据库连接池 -->
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/test" />
+        <property name="username" value="root" />
+        <property name="password" value="zx129921" />
+        <!-- 连接池的最大数据库连接数 -->
+        <property name="maxActive" value="255" />
+        <!-- 最大等待连接中的数量 -->
+        <property name="maxIdle" value="5" />
+        <!-- 最大等待毫秒数 -->
+        <property name="maxWait" value="10000" />
+    </bean>
+<!--    <bean id="SqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">-->
+<!--        <property name="dataSource" ref="dataSource" />-->
+<!--        <property name="configLocation" value="classpath:sqlMapConfig.xml" />-->
+<!--    </bean>-->
+ </beans>
+
